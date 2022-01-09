@@ -1,0 +1,20 @@
+
+<div class="header">
+ 
+   <div class ="logo"><img src="logo.jpg" alt="company logo"></div>
+<ul>
+      <%if(user){%>
+      <li>
+         <p>user email is <%= user %>  </p>
+         <button><a href="/logout">Logout</a></button>
+      </li>
+
+      <%} else{%>
+         <li>
+            <button><a href="/login_page">Login</a></button> 
+            <button><a href="/signup_create">Signup</a></button>
+         </li>
+   <%}%>
+</ul>
+
+</div>

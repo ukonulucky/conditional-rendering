@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/signup.css">
+    <title>Signup</title>
+</head>
+<body>
+     <form class="form">
+         <h2>SignUp Here</h2>
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Please enter your email" name="email">
+        <div class="email error"></div>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Please enter your password" name="password">
+        <div class="password error"></div>
+        <button>Click To SignUp</button>
+        <a class="anchor" href="/login_page">Proceed To Login</a>
+    </form>
+
+
+
+    <script>
+     const form = document.querySelector("form")
+     form.addEventListener("submit", async(e) => {
+            e.preventDefault()
+            const email = form.email.value;   
+            const password = form.password.value;
+           const data = {
+               email:email,
+               password:password
+           }
+           const emailError = document.querySelector(".email.error")
+           const passwordError = document.querySelector(".password.error")
+           emailError.textContent =""
+            passwordError.textContent =""
+           try {
+        const result = await  fetch("/signup_create",{
+            method: "POST",
+            body: JSON.stringify(data),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        })
+
+       const newResult = await result.json();
+       if(newResult.error){
+           console.log(newResult.error)
+           emailError.textContent = newResult.error.email
+           passwordError.textContent = newResult.error.password
+       }
+       console.log("the new data sent is:",newResult)
+       if(newResult.user){
+     location.assign("/login_page") 
+       }
+    } catch (error) {
+        console.log(error)
+    }
+        })
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/signup.css">
+    <title>Login</title>
+</head>
+<body>
+     <form class="form">
+         <h2>Login</h2>
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Please enter your email"  name="email">
+        <div class="email error"></div>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Please enter your password"  name="password">
+        <div class="password error"></div>
+        <button>Click To Login</button>
+        <a href="/password_retreive">Forgot Password</a>
+      <p>Don't have an account?</p> 
+       <a href="/signup_create">Click To Signup For Free</a>
+     
+    </form>
+
+
+
+    <script>
+     //blocking users from going to previous page
+        const preventBack = ()=> { window.history.forward(); }  
+        setTimeout("preventBack()", 0);  
+        window.onunload = function () { null }; 
+ 
+     const form = document.querySelector("form")
+    
+     form.addEventListener("submit", async (e) => {
+            e.preventDefault()
+     const emailError = document.querySelector(".email.error")
+     const passwordError = document.querySelector(".password.error")
+            emailError.textContent = ""
+            passwordError.textContent = ""
+            const email = form.email.value;   
+            const password = form.password.value;
+            const data = {
+                email: email,
+                password: password
+            }
+    try {
+        const result = await fetch("/login_user", {
+         method: "POST",
+         body: JSON.stringify(data),
+        headers: {
+        "Content-Type": "application/json"
+        }
+     })
+     const newResult = await result.json()
+     if(newResult.id){
+        //  console.log(newResult.id)
+         location.assign("/")
+     }
+      if(form.email.value === ""){
+        emailError.textContent = "input an email"
+      }
+      if(form.password.value === ""){
+        passwordError.textContent = "input your password"
+      }
+      if(newResult.error2 && form.email.value !== "" && form.password.value !== ""){
+        // console.log(newResult.error2)
+            emailError.textContent = newResult.error2
+            passwordError.textContent = newResult.error2
+        }
+    } catch (error) {
+        console.log(error)
+    } })
+    </script>
+
+</body>
+</html>

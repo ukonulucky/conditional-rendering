@@ -1,0 +1,216 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form {
+  padding: 20px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: medium;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 0 auto;
+  margin-top: 15vh;
+  border: 2px solid #977777;
+  border-radius: 5px;
+}
+
+.form label {
+  color: blue;
+  margin: 20px 0px;
+  padding: 10px;
+}
+
+.form input {
+  width: 90%;
+  height: 30px;
+  padding: 5px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  outline: none;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.form input:focus {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  outline: none;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.form button {
+  width: 40%;
+  height: 40px;
+  color: whitesmoke;
+  padding: 5px;
+  border: 0;
+  background-color: crimson;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.password, .email {
+  color: red;
+}
+
+.anchor {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 20vw;
+}
+
+.button button {
+  padding: 5px;
+  color: blue;
+  text-decoration: none;
+  font-size: medium;
+  border-radius: 5px;
+  font: 20px;
+}
+
+.header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  background-color: darkgray;
+  margin-bottom: 20px;
+  z-index: -100;
+}
+
+.header .logo {
+  height: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.header .logo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.header ul li {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header ul li p {
+  color: whitesmoke;
+  padding: 10px;
+}
+
+.header ul li button {
+  padding: 10px;
+}
+
+.header ul li button a {
+  text-decoration: none;
+  font-size: medium;
+}
+
+body {
+  background-color: #f2f2f2;
+  width: 100vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body h1 {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.button {
+  width: 100%;
+}
+
+.button .wrapper {
+  display: block;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.button .wrapper div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.button .wrapper div img {
+  width: 30%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 2% 1%;
+}
+
+h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: lighter;
+  font: 10px;
+}
+
+h2 a {
+  text-decoration: underline;
+  cursor: pointer;
+  color: black;
+  text-align: left;
+  font: inherit;
+}
+/*# sourceMappingURL=signup.css.map */
